@@ -24,6 +24,8 @@ RUN apt-get install python -y
 RUN curl https://github.com/n1k0/casperjs/tarball/1.0.3 -o casperjs-1.0.3.tar.gz -L
 RUN tar xvf casperjs-1.0.3.tar.gz
 ENV PATH "$PATH:/casperjs-casperjs-76fc831/bin"
+# patch bootstrap.js
+COPY bootstrap.js /casperjs-casperjs-76fc831/bin
 
 # install debugging tools
 RUN apt-get install git vim -y
